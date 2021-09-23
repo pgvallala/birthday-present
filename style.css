@@ -1,53 +1,94 @@
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 body {
-    background-color: #516dff;
-    color: whitesmoke;
-    font-family: 'Press Start 2P', sans-serif;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    text-align: center;
+  background-color: #516dff;
+  color: whitesmoke;
+  font-family: "Press Start 2P", sans-serif;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
 }
 
 a {
-    color: white;
+  color: white;
 }
 
 h1 {
-    line-height: 1.4;
+  line-height: 1.4;
 }
 
 .btn {
-    background-color: white;
-    border: 0;
-    color: #516dff;
-    cursor: pointer;
-    font-family: inherit;
-    padding: 15px 20px;
-    box-shadow: 5px 0 5px 3px rgba(0, 0, 0, 0.25);
-    border-radius: 5rem;
+  background-color: white;
+  border: 0;
+  color: #516dff;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 15px 20px;
+  box-shadow: 5px 0 5px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 5rem;
 }
 
 .btn:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .btn:focus {
-    outline: 0;
-    transform: translateY(2px);
+  outline: 0;
+  transform: translateY(2px);
 }
 
 .screen {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: center;
-    transition: margin 0.5s ease-out;
-    width: 100vw;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  transition: margin 0.5s ease-out;
+  width: 100vw;
+}
+
+.screen.up {
+  margin-top: -100vh;
+}
+
+.insect-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.insect-list li {
+  margin: 10px;
+}
+
+.choose-insect-btn {
+  background-color: transparent;
+  border: 2px solid white;
+  color: whitesmoke;
+  cursor: pointer;
+  font-family: inherit;
+  height: 150px;
+  width: 150px;
+}
+
+.choose-insect-btn:hover {
+  background-color: white;
+  color: #516dff;
+}
+
+.choose-insect-btn:active {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.choose-insect-btn img {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
 }
