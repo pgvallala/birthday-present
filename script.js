@@ -5,6 +5,7 @@ const game_container = document.getElementById("game-container");
 const timeEl = document.getElementById("time");
 const scoreEl = document.getElementById("score");
 const message = document.getElementById("message");
+const popup = document.getElementById("myPopup");
 let seconds = 0;
 let score = 0;
 let selected_insect = {};
@@ -49,10 +50,11 @@ function getRandomLocation() {
 }
 
 function catchInsect() {
+  increaseScore();
   this.classList.add("caught");
   setTimeout(() => this.remove(), 2000);
   addInsects();
-  increaseScore();
+  popup.classList.toggle("show");
 }
 
 function addInsects() {
