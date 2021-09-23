@@ -36,14 +36,43 @@ function createInsect() {
   insect.innerHTML = `<img src = "${selected_insect.src}" alt = "${
     selected_insect.alt
   }" style = "transform: rotate(${Math.random() * 360}deg)" />`;
-  insect.addEventListener('click', catchInsect)
-  game_container.appendChild(insect)
+  insect.addEventListener("click", catchInsect);
+  game_container.appendChild(insect);
 }
 
 function getRandomLocation() {
-    const width = window.innerWidth
-    const height = window.innerHeight
-    const x = Math.random() * (width - 250) + 100
-    const y = Math.random() * (height - 200) + 100
-    return { x, y }
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  const x = Math.random() * (width - 250) + 100;
+  const y = Math.random() * (height - 200) + 100;
+  return { x, y };
+}
+
+function catchInsect() {
+  this.classList.add("caught");
+  setTimeout(() => this.remove(), 2000);
+  addInsects();
+  increaseScore();
+}
+
+function addInsects() {
+  setTimeout(createInsect, 1000);
+  setTimeout(createInsect, 1500);
+}
+
+function increaseScore() {
+  score++;
+  if (score > 5) {
+    message.classList.add("visible");
+  }
+  scoreEl.innerHTML = `score: ${score}`;
+}
+
+function increaseTime() {
+  let m = Math.floor(seconds / 60);
+  let s = seconds % 60;
+  m = m < 10 ? `0${m}` : m;
+  s = s < 10 ? `0${s}` : s;
+  timeEl.innerHTML = `Time: ${m}:${s}`;
+  seconds++;
 }
