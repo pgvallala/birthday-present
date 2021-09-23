@@ -67,7 +67,7 @@ function increaseScore() {
   if (score > 5) {
     message.classList.add("visible");
   }
-  scoreEl.innerHTML = `score: ${score}`;
+  scoreEl.innerHTML = `Total Gifts: ${score}`;
 }
 
 function increaseTime() {
